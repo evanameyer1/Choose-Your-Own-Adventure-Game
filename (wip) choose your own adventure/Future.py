@@ -305,6 +305,183 @@ elif faction['faction'] == 'Humans' and (first_item['items'] == 'Gun' or second_
                     choices=['Shoot the prisoner', 'Run away and leave the cause', 'Deny that you will participate in a wrongful execution'])
     ]
     humans1answer = inquirer.prompt(human_official_join)
+
+    if humans1answer['technology1'] == 'Shoot the prisoner' and (first_item['items'] == 'Leadership Manifesto' or second_item['items'] == 'Leadership Manifesto'):
+        print("You execute the prisoner. The human restoralists are statisfied, and, as the battle has ended, offer to show you back to their base.")
+        print("You return with them, and are amazed. They have developed a society without technology, understanding that otherwise their enemy could manipulate it against them.")
+        print("Upon entering their complex, you are shown around to the different branches of their military. They bring you to a reporting desk, and ask you for your ideal assignment.")
+        print("However, you aren't sure what you should do - this decision deciedes whether or not you will be officially joining their cause.")
+        human_assignment = [
+            inquirer.List('milassignment',
+                        message="You have three options. Do you: ",
+                        choices=['Work your way up the ranks as an officer', 'Fight on the front lines as a solider', 'Look for an opening to escape and flee'])
+        ]
+        humanassignmentanswer = inquirer.prompt(human_assignment) 
+
+        if humanassignmentanswer['milassignment'] == 'Look for an opening to escape and flee':
+            print("While the soldiers aren't looking you run away and, although narrowly, escape. After running for a couple of miles, and building some distance between you and the army, you have to make a decision on where to go next.")
+            print("You remember hearing talks of the neutral people, that live fully remote and avoid the conflicts and suffering of the war. But, you aren't sure if you would enjoy that lifestyle.")
+            return_to_time_machine = [
+            inquirer.List('time_machine',
+                        message="Unsure of where to go next, you have two options: ",
+                        choices=['Live with the neutral people', 'Live off-grid by yourself', 'Attempt to make your way back to the time machine'])
+                ]
+            answertimemachine = inquirer.prompt(return_to_time_machine)
+
+            if answertimemachine['time_machine'] == 'Live off-grid by yourself' and (first_item['items'] == 'Food supplies' or second_item['items'] == 'Food supplies'):
+                print("After a couple miles of running, you find a nice spot to camp for the night. You check your backpack for things that you might need, and luckily, you find the food supplies you grabbed from the time machine.")
+                print("Inside, you find seeds and the materials needed to start a full off-grid farm. Ultimately, you live happily ever after. GAME OVER\n")
+            elif answertimemachine['time_machine'] == 'Live off-grid by yourself' and (first_item['items'] != 'Food supplies' or second_item['items'] != 'Food supplies'):
+                print(f"After a couple miles of running, you find a nice spot to camp for the night. You check your backpack for things that you might need, but unfortunately all you find are the {first_item['items']} and {second_item['items']}.") 
+                print("You are unable to substain yourself, without the necessary food supplies to set up a food source, and before long you perish. GAME OVER\n")  
+            elif answertimemachine['time_machine'] == 'Live with the neutral people' and (first_item['items'] == 'Gas mask' or second_item['items'] == 'Gas mask'):
+                print("You stay with the neutral people, and live with them well for a couple years. They teach you to farm and live off of the land, and you see a level of piece and contentment you aren't used to.")
+                print("\n However, the war continued to get worse and worse, until the technological forces had humans on their last legs. The final humans set nuclear bombs, sacrificing themselves to stop the technology.")
+                print("\n The bombs strike when you are out, and you find yourself with just minutes of time to react. Luckily, you grabbed the gas mask from the time machine, and you survive. There isn't much of anything after the bombs, and you return home on the time machine. GAME OVER \n")
+            elif answertimemachine['time_machine'] == 'Live with the neutral people' and (first_item['items'] != 'Gas mask' or second_item['items'] != 'Gas mask'):
+                print("You stay with the neutral people, and live with them well for a couple years. They teach you to farm and live off of the land, and you see a level of piece and contentment you aren't used to.")
+                print("\n However, the war continued to get worse and worse, until the technological forces had humans on their last legs. The final humans set nuclear bombs, sacrificing themselves to stop the technology.")
+                print("\n The bombs strike when you are out, and you find yourself with just minutes of time to react. Unfortunately, you lack the tools to survive the bombs, and you are killed. GAME OVER \n")
+            elif answertimemachine['time_machine'] == 'Attempt to make your way back to the time machine' and (first_item['items'] == 'Toolkit' or second_item['items'] == 'Toolkit'):
+                print("You start making your way back to where you left the time machine all the years before. When you arrive, you find the machine slightly overgrown, and surrounded by empty tents and campfires, implying people are living out of it.") 
+                print("You have to work quickly to fix the machine, but luckily you grabbed the toolkit from the time machine, and you are able to make it out and return home. GAME OVER\n") 
+            else: 
+                print("You start making your way back to where you left the time machine all the years before. When you arrive, you find the machine slightly overgrown, and surrounded by empty tents and campfires, implying people are living out of it.\n")
+                print("Unfortunately, you lack the tools or resources to quickly fix the machine in time, and before long you here the inhabitants return - they don't listen to your attempt to explain that the machine is yours, fights break out, and, outnumbered, you perish. GAME OVER\n")     
+
+        if humanassignmentanswer['milassignment'] == 'Fight on the front lines as a solider':
+            print("You have elected to serve on the front lines as a solider. You begin training immediately, and prep for your first upcoming battle.")
+            print("\n Weeks past, and your first battle is around the corner. As your team rides into battle, you notice some enemies on the flank - if they were to get through it would be absolutely devestating for your army.")
+            print("However, you aren't sure if you alone can stop them, and you know you won't be able to get information to your commander in time.")
+            human_battle = [
+            inquirer.List('battleassignment',
+                        message="Do you: ",
+                        choices=['Ignore the threat and continue with the original plan', 'Go toward the situation and attempt to stop them yourself'])
+            ]
+            humanbattleanswer = inquirer.prompt(human_battle) 
+
+            if humanbattleanswer['battleassignment'] == "Ignore the threat and continue with the original plan":
+                print("You decide to ignore the situation and carry out with the original plan. However, that decision would prove to be fatal, as the enemy destroys your entire backline, and you find yourself surrounded.")
+                print("Almost as if fate, you find yourself the last one from your squad alive. There are enemies on all sides, closing in with each passing moment. Ultimately, you do not surive the assualt. GAME OVER \n")
+            
+            elif humanbattleanswer['battleassignment'] == "Go toward the situation and attempt to stop them yourself":
+                print["You leave your post, and go directly toward the flanking enemy. You are able to successfully defeat the threat, and save the integrity of your squad."]
+                print["You are branded a war-hero, and find yoursel returning to a promotion. After a few months that pass, and the convient deaths of the officers above you, you find yourself as the commander of the entire human army."]
+                print["\nThe enemy is still winning the war, and it's now up to you and your decisions to stop it. You are tasked with determining your military objective, and how you will keep the enemy at bay."]
+                war_direction = [
+                inquirer.List('war',
+                        message="Do you: ",
+                        choices=['Storm DC and attempt to take back the capital', 'Move toward the coast and attempt to control the ports', 'Screw the plan, and lead your army straight through the heart of the enemy'])
+                ]
+                wardirectionanswer = inquirer.prompt(war_direction)    
+
+                if wardirectionanswer['war'] == 'Screw the plan, and lead your army straight through the heart of the enemy':
+                    print["You make the call to assemble the army together as one, and move straight at the enemy. You give a blood-boiling speech, motivating your armies, and for a moment there's hope."]
+                    print["That hope will be short-lived, as your inability to effectively plan a strategic attack left your losses immeasurable. Ultimately, you fell alongside your own army. GAME OVER"]
+                
+                elif wardirectionanswer['war'] == 'Move toward the coast and attempt to control the ports':
+                    print["You gather the troops and attack the coastal cities. You succeed, and before long, you control the coasts of the US. While the enemy still controls more land and has more troops, you weed out their resouces and, with time, you become strong enough to challenge them."]
+                    print["\n This also means that the enemy is willing to respond to dipolmatic efforts. You find your population divided, with half pushing for peace and half pushing for war. You have to decide how the army will proceed."]
+                    diplomacy = [
+                    inquirer.List('dip',
+                        message="Will you use the opportunity to: ",
+                        choices=['fight and attempt to destroy the enemy once and for all', 'push for a diplomatic conclusion to the war'])
+                    ]
+                    diplomacyanswer = inquirer.prompt(diplomacy)    
+
+                    if diplomacyanswer['dip'] == 'fight and attempt to destroy the enemy once and for all':
+                        print["You rally the troops and move forward yet again with one final strike at the enemy. You have weeded them out of valuable resources over time, and they are now weaker than ever before."]
+                        print["However, yet again you have underestimated your enemy. Even weaker, the human army still stands no match to technology, and your assualt fails. GAME OVER"]
+                    else: 
+                        print["You take advantage of the weakened enemy, and you push for diplomacy. The enemy reluctantly accepts and after years and years of destruction, peace is finally accomplished. GAME OVER"]
+                else:
+                    print["You gather your army and make plans to move toward the capital. Although the fight is tough, by focusing all of your manpower on the specific area, you are able to succeed."]
+                    print["Now, as ruler of the army, you have yet another decision - where to go next."]
+                    outsideus = [
+                    inquirer.List('us',
+                        message="Will you: ",
+                        choices=['rule the armies ', 'push for a diplomatic conclusion to the war'])
+                    ]
+                    outsideusanswer = inquirer.prompt(outsideus)    
+
+    elif humans1answer['technology1'] == 'Shoot the prisoner' and (first_item['items'] != 'Leadership Manifesto' or second_item['items'] != 'Leadership Manifesto'):
+        print("You execute the prisoner. The human restoralists are statisfied, and, as the battle has ended, offer to show you back to their base.")
+        print("You return with them, and are amazed. They have developed a society without technology, understanding that otherwise their enemy could manipulate it against them.")
+        print("Upon entering their complex, you are shown around to the different branches of their military. They bring you to a reporting desk, and ask you for your ideal assignment.")
+        print("However, you aren't sure what you should do - this decision deciedes whether or not you will be officially joining their cause.")
+        human_assignment = [
+            inquirer.List('milassignment',
+                        message="You have two options. Do you: ",
+                        choices=['Fight on the front lines as a solider', 'Look for an opening to escape and flee'])
+        ]
+        humanassignmentanswer = inquirer.prompt(human_assignment)    
+
+        if humanassignmentanswer['milassignment'] == 'Look for an opening to escape and flee':
+            print("While the soldiers aren't looking you run away and, although narrowly, escape. After running for a couple of miles, and building some distance between you and the army, you have to make a decision on where to go next.")
+            print("You remember hearing talks of the neutral people, that live fully remote and avoid the conflicts and suffering of the war. But, you aren't sure if you would enjoy that lifestyle.")
+            return_to_time_machine = [
+            inquirer.List('time_machine',
+                        message="Unsure of where to go next, you have two options: ",
+                        choices=['Live with the neutral people', 'Live off-grid by yourself', 'Attempt to make your way back to the time machine'])
+                ]
+            answertimemachine = inquirer.prompt(return_to_time_machine)
+
+            if answertimemachine['time_machine'] == 'Live off-grid by yourself' and (first_item['items'] == 'Food supplies' or second_item['items'] == 'Food supplies'):
+                print("After a couple miles of running, you find a nice spot to camp for the night. You check your backpack for things that you might need, and luckily, you find the food supplies you grabbed from the time machine.")
+                print("Inside, you find seeds and the materials needed to start a full off-grid farm. Ultimately, you live happily ever after. GAME OVER\n")
+            elif answertimemachine['time_machine'] == 'Live off-grid by yourself' and (first_item['items'] != 'Food supplies' or second_item['items'] != 'Food supplies'):
+                print(f"After a couple miles of running, you find a nice spot to camp for the night. You check your backpack for things that you might need, but unfortunately all you find are the {first_item['items']} and {second_item['items']}.") 
+                print("You are unable to substain yourself, without the necessary food supplies to set up a food source, and before long you perish. GAME OVER\n")  
+            elif answertimemachine['time_machine'] == 'Live with the neutral people' and (first_item['items'] == 'Gas mask' or second_item['items'] == 'Gas mask'):
+                print("You stay with the neutral people, and live with them well for a couple years. They teach you to farm and live off of the land, and you see a level of piece and contentment you aren't used to.")
+                print("\n However, the war continued to get worse and worse, until the technological forces had humans on their last legs. The final humans set nuclear bombs, sacrificing themselves to stop the technology.")
+                print("\n The bombs strike when you are out, and you find yourself with just minutes of time to react. Luckily, you grabbed the gas mask from the time machine, and you survive. There isn't much of anything after the bombs, and you return home on the time machine. GAME OVER \n")
+            elif answertimemachine['time_machine'] == 'Live with the neutral people' and (first_item['items'] != 'Gas mask' or second_item['items'] != 'Gas mask'):
+                print("You stay with the neutral people, and live with them well for a couple years. They teach you to farm and live off of the land, and you see a level of piece and contentment you aren't used to.")
+                print("\n However, the war continued to get worse and worse, until the technological forces had humans on their last legs. The final humans set nuclear bombs, sacrificing themselves to stop the technology.")
+                print("\n The bombs strike when you are out, and you find yourself with just minutes of time to react. Unfortunately, you lack the tools to survive the bombs, and you are killed. GAME OVER \n")
+            elif answertimemachine['time_machine'] == 'Attempt to make your way back to the time machine' and (first_item['items'] == 'Toolkit' or second_item['items'] == 'Toolkit'):
+                print("You start making your way back to where you left the time machine all the years before. When you arrive, you find the machine slightly overgrown, and surrounded by empty tents and campfires, implying people are living out of it.") 
+                print("You have to work quickly to fix the machine, but luckily you grabbed the toolkit from the time machine, and you are able to make it out and return home. GAME OVER\n") 
+            else: 
+                print("You start making your way back to where you left the time machine all the years before. When you arrive, you find the machine slightly overgrown, and surrounded by empty tents and campfires, implying people are living out of it.\n")
+                print("Unfortunately, you lack the tools or resources to quickly fix the machine in time, and before long you here the inhabitants return - they don't listen to your attempt to explain that the machine is yours, fights break out, and, outnumbered, you perish. GAME OVER\n") 
+    
+    elif humans1answer['technology1'] == 'Run away and leave the cause':
+        print("While the soldiers aren't looking you run away and, although narrowly, escape. After running for a couple of miles, and building some distance between you and the army, you have to make a decision on where to go next.")
+        print("You remember hearing talks of the neutral people, that live fully remote and avoid the conflicts and suffering of the war. But, you aren't sure if you would enjoy that lifestyle.")
+        return_to_time_machine = [
+        inquirer.List('time_machine',
+                    message="Unsure of where to go next, you have two options: ",
+                    choices=['Live with the neutral people', 'Live off-grid by yourself', 'Attempt to make your way back to the time machine'])
+            ]
+        answertimemachine = inquirer.prompt(return_to_time_machine)
+
+        if answertimemachine['time_machine'] == 'Live off-grid by yourself' and (first_item['items'] == 'Food supplies' or second_item['items'] == 'Food supplies'):
+            print("After a couple miles of running, you find a nice spot to camp for the night. You check your backpack for things that you might need, and luckily, you find the food supplies you grabbed from the time machine.")
+            print("Inside, you find seeds and the materials needed to start a full off-grid farm. Ultimately, you live happily ever after. GAME OVER\n")
+        elif answertimemachine['time_machine'] == 'Live off-grid by yourself' and (first_item['items'] != 'Food supplies' or second_item['items'] != 'Food supplies'):
+            print(f"After a couple miles of running, you find a nice spot to camp for the night. You check your backpack for things that you might need, but unfortunately all you find are the {first_item['items']} and {second_item['items']}.") 
+            print("You are unable to substain yourself, without the necessary food supplies to set up a food source, and before long you perish. GAME OVER\n")  
+        elif answertimemachine['time_machine'] == 'Live with the neutral people' and (first_item['items'] == 'Gas mask' or second_item['items'] == 'Gas mask'):
+            print("You stay with the neutral people, and live with them well for a couple years. They teach you to farm and live off of the land, and you see a level of piece and contentment you aren't used to.")
+            print("\n However, the war continued to get worse and worse, until the technological forces had humans on their last legs. The final humans set nuclear bombs, sacrificing themselves to stop the technology.")
+            print("\n The bombs strike when you are out, and you find yourself with just minutes of time to react. Luckily, you grabbed the gas mask from the time machine, and you survive. There isn't much of anything after the bombs, and you return home on the time machine. GAME OVER \n")
+        elif answertimemachine['time_machine'] == 'Live with the neutral people' and (first_item['items'] != 'Gas mask' or second_item['items'] != 'Gas mask'):
+            print("You stay with the neutral people, and live with them well for a couple years. They teach you to farm and live off of the land, and you see a level of piece and contentment you aren't used to.")
+            print("\n However, the war continued to get worse and worse, until the technological forces had humans on their last legs. The final humans set nuclear bombs, sacrificing themselves to stop the technology.")
+            print("\n The bombs strike when you are out, and you find yourself with just minutes of time to react. Unfortunately, you lack the tools to survive the bombs, and you are killed. GAME OVER \n")
+        elif answertimemachine['time_machine'] == 'Attempt to make your way back to the time machine' and (first_item['items'] == 'Toolkit' or second_item['items'] == 'Toolkit'):
+            print("You start making your way back to where you left the time machine all the years before. When you arrive, you find the machine slightly overgrown, and surrounded by empty tents and campfires, implying people are living out of it.") 
+            print("You have to work quickly to fix the machine, but luckily you grabbed the toolkit from the time machine, and you are able to make it out and return home. GAME OVER\n") 
+        else: 
+            print("You start making your way back to where you left the time machine all the years before. When you arrive, you find the machine slightly overgrown, and surrounded by empty tents and campfires, implying people are living out of it.\n")
+            print("Unfortunately, you lack the tools or resources to quickly fix the machine in time, and before long you here the inhabitants return - they don't listen to your attempt to explain that the machine is yours, fights break out, and, outnumbered, you perish. GAME OVER\n")    
+    
+    else:
+        print("You valiantly let them know that you will not participate in an unjust execution - especially of a solider that is unarmed and surrending.")
+        print("Unfortunately, valiance gets you nothing, and you are executed as an example for the others that are considering desertion. GAME OVER")
+
 else:
     print("You have selected to join the humans. You run over to the their baracks, and pretend like you belong. After hiding in the bathroom for what feels like hours, the shooting stops.")
     print("When the fighting silences you apprehensively leave your hiding spot, only to run into a revolution commander. He has no clue who you are and demands you prove your allegience.\n")
