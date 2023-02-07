@@ -256,9 +256,8 @@ def game():
         print(f"You have chosen {destination['destination']}. Please solve the following riddle:\n{riddle}")
         answer = input("Enter your answer: ")
 
-        if answer == 'memory':
+        if answer.lower() == 'memory':
             print("Correct! Time to travel back in time.")
-            break
         else:
             print("Incorrect. Time travel to the past failed. Try again")
 
@@ -268,7 +267,7 @@ def game():
         print(f"You have chosen {destination['destination']}. Please solve the following riddle:\n{riddle}")
         answer = input("Enter your answer: ")
 
-        if answer == 'Tomorrow':
+        if answer.lower() == 'tomorrow':
             print("Correct! Time to travel to the future.")
             break
         else:
