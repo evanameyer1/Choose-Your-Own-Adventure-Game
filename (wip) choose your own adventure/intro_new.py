@@ -257,9 +257,10 @@ def game():
         answer = input("Enter your answer: ")
 
         if answer == 'memory':
-            print("Correct! Time to travel back in time. Try again")
+            print("Correct! Time to travel back in time.")
+            break
         else:
-            print("Incorrect. Time travel to the past failed.")
+            print("Incorrect. Time travel to the past failed. Try again")
 
     riddle = "I never was\nAm always to be,\nNoone ever saw me\nnor ever will.\nAnd yet I am the confidence of all\nto live and breathe on this terrestrial ball."
 
