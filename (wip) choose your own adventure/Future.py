@@ -1,3 +1,20 @@
+import os
+import sys
+import time
+from pprint import pprint
+
+sys.path.append(os.path.realpath("."))
+import inquirer
+
+import tkinter as tk
+from tkinter import ttk
+
+def print(text):
+    for character in text:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(0.02)
+
 def travel_to_future():
 
     print("\nYou step out the time machine and look around. The year is 3079.")
@@ -15,12 +32,53 @@ def travel_to_future():
     ]
     first_item = inquirer.prompt(first_item)
 
-    second_item = [
-        inquirer.List('items',
-                    message="Make your second selection:",
-                    choices=['Leadership Manifesto', 'Gun', 'Medkit', 'Food supplies', 'Gas mask', 'Toolkit'])
-    ]
-    second_item = inquirer.prompt(second_item)
+    if first_item['items'] == 'Leadership Manifesto':
+        second_item = [
+            inquirer.List('items',
+                        message="Make your second selection:",
+                        choices=['Gun', 'Medkit', 'Food supplies', 'Gas mask', 'Toolkit'])
+        ]
+        second_item = inquirer.prompt(second_item)
+
+    elif first_item['items'] == 'Gun':
+        second_item = [
+            inquirer.List('items',
+                        message="Make your second selection:",
+                        choices=['Leadership Manifesto', 'Medkit', 'Food supplies', 'Gas mask', 'Toolkit'])
+        ]
+        second_item = inquirer.prompt(second_item)
+    
+    elif first_item['items'] == 'Medkit':
+        second_item = [
+            inquirer.List('items',
+                        message="Make your second selection:",
+                        choices=['Leadership Manifesto', 'Gun', 'Food supplies', 'Gas mask', 'Toolkit'])
+        ]
+        second_item = inquirer.prompt(second_item)
+
+    elif first_item['items'] == 'Food supplies':
+        second_item = [
+            inquirer.List('items',
+                        message="Make your second selection:",
+                        choices=['Leadership Manifesto', 'Gun', 'Medkit', 'Gas mask', 'Toolkit'])
+        ]
+        second_item = inquirer.prompt(second_item)
+
+    elif first_item['items'] == 'Gas mask':
+        second_item = [
+            inquirer.List('items',
+                        message="Make your second selection:",
+                        choices=['Leadership Manifesto', 'Gun', 'Medkit', 'Food Supplies', 'Toolkit'])
+        ]
+        second_item = inquirer.prompt(second_item)
+
+    else:
+        second_item = [
+            inquirer.List('items',
+                        message="Make your second selection:",
+                        choices=['Leadership Manifesto', 'Gun', 'Medkit', 'Food Supplies', 'Gas mask'])
+        ]
+        second_item = inquirer.prompt(second_item)
 
     print(f"\nYou grab the {first_item['items'].lower()} and {second_item['items'].lower()} and decide to head out.".format())
     print(" As soon as you leave your ship, you run into two groups of people.")
