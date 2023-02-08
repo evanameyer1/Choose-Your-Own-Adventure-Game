@@ -1,10 +1,10 @@
-# Game overview
+# Game Overview
 
 *Welcome to our choose your own adventure game!*
 You are living in the near future when you stumble across an old time machine - you aren’t sure how to use it (they don’t exactly teach it in school) but your curiousity overpowers all else and you find the possibilities of time travel consuming your every thought. 
 One night, when you’ve had enough, you grab a spare toolkit from your garage and attempt to fix it up...  
 
-## How to play
+## How To Play
 
 In order to play our choose your own adventure game, you have to download our virtual environment - our game’s own little bubble that allows you to access the packages and tools you need (but just when you play). Below are the steps to set this up: 
 
@@ -38,7 +38,7 @@ from tkinter import ttk
 import inquirer 
 sys.path.append(os.path.realpath(".")) 
 ```
-##### **Function for typing print:**
+##### **Function For Typing Print:**
 ```
 def print(text):
     for character in text:
@@ -48,7 +48,7 @@ def print(text):
 ```
 ## Process
 
-##### **For the futuristic timeline**
+##### **For the Futuristic Timeline**
 
 I first drew out the paths via pen and paper to help me map out my process and ensure that all of the items were correctly accounted for. 
 Once I had an end product I was satisfied with, I copied everything over to a digital format as shown below. 
