@@ -14,6 +14,21 @@ def print(text):
         sys.stdout.write(character)
         sys.stdout.flush()
         time.sleep(0.02)
+        
+def future_end():
+        game_end = [
+            inquirer.List('gameend',
+                        message="Select from the options below:",
+                        choices=['Restart the game from the beginning', 'Restart the game to when the time machine was built', 'Restart your current timeline'])
+        ]
+        gameendanswer = inquirer.prompt(game_end)
+
+        if gameendanswer == 'Restart the game from the beginning':
+            gamestart()
+        elif gameendanswer == 'Restart the game to when the time machine was built':
+            timemachine()
+        else:
+            travel_to_future()
 
 def travel_to_future():
 
@@ -900,3 +915,5 @@ def travel_to_future():
         else:
             print("You valiantly let them know that you will not participate in an unjust execution - especially of a solider that is unarmed and surrending.")
             print("Unfortunately, valiance gets you nothing, and you are executed as an example for the others that are considering desertion. GAME OVER")
+    
+travel_to_future()

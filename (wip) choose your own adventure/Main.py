@@ -3,16 +3,16 @@ import os
 import sys
 import time
 from pprint import pprint
-
-sys.path.append(os.path.realpath("."))
-import inquirer
-
 import tkinter as tk
 from tkinter import ttk
 import pygame.freetype
 from pygame.sprite import Sprite
 from pygame.rect import Rect
 from enum import Enum
+import inquirer
+
+sys.path.append(os.path.realpath("."))
+
 
 def print(text):
     for character in text:

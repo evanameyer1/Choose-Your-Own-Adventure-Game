@@ -9,7 +9,26 @@ import tkinter as tk
 from tkinter import ttk
 import random
 import time
+def print(text):
+    for character in text:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(0.02)
 
+def past_end():
+        game_end = [
+            inquirer.List('gameend',
+                        message="Select from the options below:",
+                        choices=['Restart the game from the beginning', 'Restart the game to when the time machine was built', 'Restart your current timeline'])
+        ]
+        gameendanswer = inquirer.prompt(game_end)
+
+        if gameendanswer == 'Restart the game from the beginning':
+            gamestart()
+        elif gameendanswer == 'Restart the game to when the time machine was built':
+            timemachine()
+        else:
+            travel_to_past()
 
 poss_actions = []
 curr_action = ''
@@ -679,4 +698,5 @@ def TravelToPast():
     poss_loc.append('deadwood town')
 
     place_pick()
-TravelToPast()
+
+travel_to_past()
