@@ -10,12 +10,12 @@ One night, when you’ve had enough, you grab a spare toolkit from your garage a
 2. Change directory: cd <folder name>
 3. Run the script: python Main.py
 
-#####Prerequisites
+##### Prerequisites
 * Python 3
 * tkinter
 * inquirer
 * pprint
-#####Installing Process
+##### Installing Process
 * Install Python 3: https://www.python.org/downloads/
 * Install required packages:
 * tkinter: pip install python-tk
