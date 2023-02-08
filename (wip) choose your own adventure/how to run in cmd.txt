@@ -1,2 +1,0 @@
-cd "C:\Users\evana\OneDrive\Desktop\github projects\Choose Your Own Adventure\code"
-python3 future.py
