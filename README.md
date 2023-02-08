@@ -10,7 +10,7 @@ In order to play our choose your own adventure game, you have to download our vi
 
 ##### **For Windows Machines**
 
-1. Download our game and it’s required packages at this link: insert link
+1. Download our game and it’s required packages at this [link](https://drive.google.com/drive/folders/12HL2gLqy2v0IkFKQ0jYISr8pCtoThxU9?usp=sharing)
 2. Type ‘cmd’ into your search bar to open the command prompt
 3. Right click on the folder that contains your download game and click “Copy as Path”. Then, in your command prompt, type ‘cd’ and paste your path. Click enter. 
 4. Paste ‘timemachineenv/Scripts/activate.bat’ into the command prompt next and click enter.
