@@ -7,7 +7,7 @@ One night, when you’ve had enough, you grab a spare toolkit from your garage a
 ## How To Play
 
 1. Clone the repository: git clone https://github.com/evanameyer1/Choose-Your-Own-Adventure
-2. Change directory: cd <folder name>
+2. Change directory: cd "folder name"
 3. Run the script: python Main.py
 
 ##### Prerequisites
