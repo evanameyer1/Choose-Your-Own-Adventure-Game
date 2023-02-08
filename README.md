@@ -28,14 +28,14 @@ In order to play our choose your own adventure game, you have to download our vi
 
 ##### **Imports:**
 
-import os
-import sys
-import time
-from pprint import pprint
-import tkinter as tk
-from tkinter import ttk
-import inquirer
-sys.path.append(os.path.realpath("."))
+import os \n
+import sys \n
+import time \n
+from pprint import pprint \n
+import tkinter as tk \n
+from tkinter import ttk \n
+import inquirer \n
+sys.path.append(os.path.realpath(".")) \n
 
 ##### **Function for typing print:**
 
