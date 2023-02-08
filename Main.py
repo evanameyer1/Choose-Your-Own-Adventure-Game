@@ -1,5 +1,4 @@
 # imported packages
-import pygame
 import os
 import sys
 import time
@@ -77,11 +76,11 @@ def game():
         elif wire_choice == 'Green':
             print(
                 "You just overheated the machine and melted the internal components. Start Over\n")
-            print(game())
+            game()
             break
         elif wire_choice == "Red":
             print("You just blew up your house and died. Start Over\n")
-            print(game())
+            game()
             break
         elif wire_choice == 'Yellow':
             print(
@@ -149,4 +148,4 @@ def game():
                 print("Incorrect. Time travel to the future failed. Try again")
     time_machine()
 
-print(game())
+game()
