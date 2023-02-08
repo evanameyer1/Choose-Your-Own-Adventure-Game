@@ -6,24 +6,21 @@ One night, when you’ve had enough, you grab a spare toolkit from your garage a
 
 ## How To Play
 
-In order to play our choose your own adventure game, you have to download our virtual environment - our game’s own little bubble that allows you to access the packages and tools you need (but just when you play). Below are the steps to set this up: 
+1. Clone the repository: git clone https://github.com/evanameyer1/Choose-Your-Own-Adventure
+2. Change directory: cd <folder name>
+3. Run the script: python Main.py
 
-##### **For Windows Machines**
-
-1. Download our game and it’s required packages at this [link](https://drive.google.com/drive/folders/12HL2gLqy2v0IkFKQ0jYISr8pCtoThxU9?usp=sharing)
-2. Type ‘cmd’ into your search bar to open the command prompt
-3. Right click on the folder that contains your download game and click “Copy as Path”. Then, in your command prompt, type ‘cd’ and paste your path. Click enter. 
-4. Paste ‘venv/timemachineenv/Scripts/activate.bat’ into the command prompt next and click enter.
-5. Paste 'pip install -r requirements.txt’ into your command prompt and click enter to install the required packages.
-6. Finally, paste ‘python -m main’ to run the game and enjoy!
-
-##### **For MacOS**
-
-1. Download our game and it’s required packages at this link: insert link
-2. Right click on the folder that contains your download game and click Services>New Terminal at Folder.  
-4. Paste ‘venv/timemachineenv/bin/activate’ into the command prompt next and click enter.
-5. Paste 'pip install -r requirements.txt’ into your command prompt and click enter to install the required packages.
-6. Finally, paste ‘python “Main.py”’ to run the game and enjoy!
+#####Prerequisites
+* Python 3
+* tkinter
+* inquirer
+* pprint
+#####Installing Process
+* Install Python 3: https://www.python.org/downloads/
+* Install required packages:
+* tkinter: pip install python-tk
+* inquirer: pip install inquirer
+* pprint: already included in Python 3
 
 ## Tools Used
 
@@ -47,6 +44,9 @@ def print(text):
         time.sleep(0.02)
 ```
 ## Process
+##### **For The Main Timeline** - YAMATO KASHIMA
+
+The game starts by printing a brief introduction to the story. The player is then prompted to select parts to repair the time machine in a specific order. Once all parts are assembled, the player selects a wire color to connect to start the machine. Finally, the player calibrates the strength of the time machine before being prompted to decide on when to travel to.
 
 ##### **For The Futuristic Timeline** - EVAN MEYER
 
