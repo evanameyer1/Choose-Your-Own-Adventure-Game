@@ -4,7 +4,7 @@
 You are living in the near future when you stumble across an old time machine - you aren’t sure how to use it (they don’t exactly teach it in school) but your curiousity overpowers all else and you find the possibilities of time travel consuming your every thought. 
 One night, when you’ve had enough, you grab a spare toolkit from your garage and attempt to fix it up...  
 
-## How To Play
+## How To Play (via pip install)
 
 1. Clone the repository: git clone https://github.com/evanameyer1/Choose-Your-Own-Adventure
 2. Change directory: cd "folder name"
@@ -21,6 +21,26 @@ One night, when you’ve had enough, you grab a spare toolkit from your garage a
 * tkinter: pip install python-tk
 * inquirer: pip install inquirer
 * pprint: already included in Python 3
+
+## How To Play (via virtual environment)
+
+##### For Windows Machines
+
+1. Download our game and it’s required packages at this link: insert link
+2. Type ‘cmd’ into your search bar to open the command prompt
+3. Right click on the folder that contains your download game and click “Copy as Path”. Then, in your command prompt, type ‘cd’ and paste your path. Click enter. 
+4. Paste ‘timemachineenv/Scripts/activate.bat’ into the command prompt next and click enter.
+5. Paste 'pip install -r requirements.txt’ into your command prompt and click enter to install the required packages.
+6. Finally, paste ‘python -m main’ to run the game and enjoy!
+
+##### For MacOS
+
+1. Download our game and it’s required packages at this link: insert link
+2. Right click on the folder that contains your download game and click Services>New Terminal at Folder.  
+4. Paste ‘timemachineenv/bin/activate’ into the command prompt next and click enter.
+5. Paste 'pip install -r requirements.txt’ into your command prompt and click enter to install the required packages.
+6. Finally, paste ‘python “Main.py”’ to run the game and enjoy!
+
 
 ## Tools Used
 
