@@ -1,14 +1,13 @@
 import os
 import sys
 from pprint import pprint
-
-sys.path.append(os.path.realpath("."))
 import inquirer
-
 import tkinter as tk
 from tkinter import ttk
 import random
 import time
+sys.path.append(os.path.realpath("."))
+
 def print(text):
     for character in text:
         sys.stdout.write(character)
@@ -39,7 +38,7 @@ fought = False
 inventory = []
 items = ['Gun','Money','Water','Tools','Lucky hat', 'Tobacco', 'Knife']
 chose = ''
-def TravelToPast():
+def travel_to_past():
     global poss_actions
     global curr_action
     global poss_loc
@@ -209,7 +208,7 @@ def TravelToPast():
             if youdieanyways == True and checkitem("water") == False:
                 time.sleep(1)
                 print("\nYou somehow get away but without water, and no chance of walking near deadwood town again, you die in the middle of the desert, unlucky.")
-                exit()
+                past_end()
             if youdieanyways == True and checkitem('water') == True:
                 time.sleep(1)
                 print("\nYou get away, you don't really want to go anywhere near that town every again.")
@@ -220,7 +219,7 @@ def TravelToPast():
                 time.sleep(1)
                 print("\nAs you try to run, one of them pulls out a gun and shoots you in the leg.")
                 print("they take everything they can find and throw you in a ditch to die.")
-                exit()
+                past_end()
         if curr_action == 'fight':
             fought = True
             if checkitem('gun') == False and checkitem('knife') == False:
@@ -229,7 +228,7 @@ def TravelToPast():
                 print("\nWhat where you thinking?")
                 time.sleep(2)
                 print("\nYou die.")
-                exit()
+                past_end()
             elif checkitem('gun') == True and checkitem('hat') == True and checkbullets(4) == True:
                 time.sleep(1)
                 print("\nDespite the 6 men surrounding you, with your lucky hat and your gun, it only takes 4 bullets to take them all down.")
@@ -251,7 +250,7 @@ def TravelToPast():
                 print("\nAlthough you have your gun, You dont have enough bullets in your gun and only end up getting stabbed.")
                 time.sleep(2)
                 print("\nYou die.")
-                exit()
+                past_end()
             elif checkitem('knife') == True and checkitem('hat') == True:
                 time.sleep(1)
                 print("\nDespite your lack of a gun, you trust your combat skills and your lucky hat to win this fight.")
@@ -266,7 +265,7 @@ def TravelToPast():
                 print("\nWhat where you thinking?")
                 time.sleep(2)
                 print("\nYou die.")
-                exit()
+                past_end()
         if curr_action == 'play blackjack':
             broke()
             print("\nyou have " + str(moneyamt()) + " dollars")
@@ -298,13 +297,15 @@ def TravelToPast():
                 time.sleep(0.5)
                 print("\nYou don't have enough money for the water.")
                 bar()
+        if curr_action == 'back to the town':
+            deadwood()
 
     def broke():
         if checkmoney(1) == False and (checkitem('tools') == False or checkitem('glass') == False):
             print("\nYou have no more money and cannot repair your machine.")
             time.sleep(1)
             print("\nYou die.")
-            exit()
+            past_end()
             
 
 
@@ -323,7 +324,7 @@ def TravelToPast():
                 time.sleep(4)
                 print("\n\nCONGRATS YOU COMPLETED THE OLD WEST!")
                 time.sleep(4)
-                exit()
+                past_end()
             elif checkitem('tools') != True or checkitem('glass pane') != True:
                 print("\nThere isnt much to do here since your machinese broken, you're going to need both some tools and a glass pane to repair your machine")
                 time.sleep(2)
@@ -499,7 +500,7 @@ def TravelToPast():
     def bar():
         global poss_actions
         print("\nYou walk into the bar. You see some people playing cards and the bartender serving drinks.")
-        poss_actions = ['ask for water', 'play blackjack']
+        poss_actions = ['ask for water', 'play blackjack', 'back to the town']
         action_pick()
 
     def badblackjack():
