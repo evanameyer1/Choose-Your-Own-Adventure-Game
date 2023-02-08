@@ -1,6 +1,6 @@
 # Game overview
 
-Welcome to our choose your own adventure game! 
+* *Welcome to our choose your own adventure game!* *
 You are living in the near future when you stumble across an old time machine - you aren’t sure how to use it (they don’t exactly teach it in school) but your curiousity overpowers all else and you find the possibilities of time travel consuming your every thought. 
 One night, when you’ve had enough, you grab a spare toolkit from your garage and attempt to fix it up...  
 
