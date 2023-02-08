@@ -55,6 +55,8 @@ def print(text):
 I first drew out the paths via pen and paper as shown above - this helped me map out my process and ensure that all of the items were correctly accounted for. 
 Once I had an end product I was satisfied with, I copied everything over to a digital format as shown below. 
 
+![Futuristic Timeline Paths](https://user-images.githubusercontent.com/56325011/217443169-5be99c2c-9c88-4fa4-9b14-39db4d60f249.png)
+
 I colored-coded things as follows: blue requires an item to access, green is a result where winning is possible, red is a result where winning is not possible, 
 and the purple shapes are places where I didn’t have space to finish the paths so I continuted them someplace else. 
 
