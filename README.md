@@ -50,6 +50,8 @@ def print(text):
 
 ##### **For the futuristic timeline**
 
+![IMG-5707](https://user-images.githubusercontent.com/56325011/217442926-7793e23e-7d09-4fbb-9a2d-a9e5be3d4c19.jpg)
+
 I first drew out the paths via pen and paper as shown above - this helped me map out my process and ensure that all of the items were correctly accounted for. 
 Once I had an end product I was satisfied with, I copied everything over to a digital format as shown below. 
 
