@@ -48,7 +48,7 @@ def print(text):
 ```
 ## Process
 
-##### **For The Futuristic Timeline** BY EVAN MEYER
+##### **For The Futuristic Timeline** - EVAN MEYER
 
 I first drew out the paths via pen and paper to help me map out my process and ensure that all of the items were correctly accounted for. 
 Once I had an end product I was satisfied with, I copied everything over to a digital format as shown below. 
