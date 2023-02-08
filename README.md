@@ -27,7 +27,7 @@ In order to play our choose your own adventure game, you have to download our vi
 ## Tools Used
 
 ##### **Imports:**
-
+```
 import os 
 import sys 
 import time
@@ -36,15 +36,15 @@ import tkinter as tk
 from tkinter import ttk 
 import inquirer 
 sys.path.append(os.path.realpath(".")) 
-
+```
 ##### **Function for typing print:**
-
+```
 def print(text):
     for character in text:
         sys.stdout.write(character)
         sys.stdout.flush()
         time.sleep(0.02)
-
+```
 ## Process
 
 ##### **For the futuristic timeline**
