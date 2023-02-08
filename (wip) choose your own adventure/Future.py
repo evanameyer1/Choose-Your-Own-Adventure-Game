@@ -24,9 +24,9 @@ def future_end():
         gameendanswer = inquirer.prompt(game_end)
 
         if gameendanswer == 'Restart the game from the beginning':
-            gamestart()
+            game()
         elif gameendanswer == 'Restart the game to when the time machine was built':
-            timemachine()
+            time_machine()
         else:
             travel_to_future()
 
@@ -229,8 +229,10 @@ def travel_to_future():
 
                     if float(get_current_value()) > 7:
                         print(f"Your amount of ${get_current_value()} billion was way too much - your own people were disappointed in you and saw you as a weak leader, and ultimately you were assassinated. GAME OVER\n")
+                        future_end()
                     elif float(get_current_value()) < 4:    
                         print(f"Your amount of ${get_current_value()} billion wasn't nearly enough, and the humans felt mocked and played. They mustered up an assassination on you. GAME OVER\n")
+                        future_end()
                     else:
                         print(f"Your amount of ${get_current_value()} billion was the perfect amount, and were able to find harmony between the technology and human sides. Now, you must decide if you want to live out your days here, or return to the time machine.\n")
                         return_to_time_machine = [
@@ -244,14 +246,17 @@ def travel_to_future():
                             print(" You retire, and live off your days as the future's most successful leader. ")
                             print("You ended a war that almost saw the end of the human race.")
                             print(" Ultimately, you live happily ever after. GAME OVER\n")
+                            future_end()
                         elif answertimemachine['time_machine'] == 'Attempt to make your way back to the time machine' and (first_item['items'] == 'Toolkit' or second_item['items'] == 'Toolkit'):
                             print(" You start making your way back to where you left the time machine all the years before. ")
                             print("When you arrive, you find the machine slightly overgrown, and surrounded by empty tents and campfires, implying people are living out of it.") 
-                            print(" You have to work quickly to fix the machine, but luckily you grabbed the toolkit from the time machine, and you are able to make it out and return home. GAME OVER\n") 
+                            print(" You have to work quickly to fix the machine, but luckily you grabbed the toolkit from the time machine, and you are able to make it out and return home. GAME OVER\n")
+                            future_end() 
                         else: 
                             print(" You start making your way back to where you left the time machine all the years before. ")
                             print("When you arrive, you find the machine slightly overgrown, and surrounded by empty tents and campfires, implying people are living out of it.")
-                            print(" Unfortunately, you lack the tools or resources to quickly fix the machine in time, and before long you here the inhabitants return - they don't listen to your attempt to explain that the machine is yours, fights break out, and, outnumbered, you perish. GAME OVER\n")  
+                            print(" Unfortunately, you lack the tools or resources to quickly fix the machine in time, and before long you here the inhabitants return - they don't listen to your attempt to explain that the machine is yours, fights break out, and, outnumbered, you perish. GAME OVER\n")
+                            future_end()  
 
                 elif answertechleadership['tech_lead'] == 'Continue to destroy the remaining human populations, until all that is left is the technological world' and (first_item['items'] == 'Gas mask' or second_item['items'] == 'Gas mask'):
                     print("You have decided to continue the destruction, and behind your leadership, in just a couple years almost all of the population is wiped out. ")
@@ -259,11 +264,13 @@ def travel_to_future():
                     print(" The bombs strike when you are out, and you find yourself with just minutes of time to react. ")
                     print("Luckily, you grabbed the gas mask from the time machine, and you survive. ")
                     print("There isn't much of anything after the bombs, and you return home on the time machine. GAME OVER \n")
+                    future_end()
                 else: 
                     print("You have decided to continue the destruction, and behind your leadership, in just a couple years almost all of the population is wiped out. ")
                     print("Those that remain result to nuclear methods, sacrificing their world to stop you.")
                     print(" The bombs strike when you are out, and you find yourself with just minutes of time to react. ")
                     print("Unfortunately, you lack the tools to survive the bombs, and you are killed alongside your empire. GAME OVER \n")
+                    future_end()
 
             else:
                 print("After months of training, and bonding with friends, you're finally battle ready. ")
@@ -284,10 +291,12 @@ def travel_to_future():
                         print("You rush over to your friend, pull out your medkit, and quickly get them patched up. ")
                         print("However, as you're helping them you get hit by a stray bullet from the incoming soliders.")
                         print( "Your friend is able to escape, but because you used your medkit on them, you are killed. GAME OVER\n")
+                        future_end()
                 elif answersavefriend['friend'] == 'Attempt to save your friend' and (first_item['items'] != 'Medkit' or second_item['items'] != 'Medkit'):
                         print("You rush over to your friend, reach for your bag, but realize you forgot your medkit in the time machine. ")
                         print("Because you tried to save them, the enemy soldiers are closer, and you get hit by a stray bullet. ")
                         print("You are killed. GAME OVER\n")
+                        future_end()
                 else: 
                         print("You turn away from their cries, and run away. ")
                         print("You know you can't go back ever again, as you will be labeled as a deserter and tried for treason.\n")
@@ -303,17 +312,21 @@ def travel_to_future():
                             print("You check your backpack for things that you might need, and luckily, you find the food supplies you grabbed from the time machine. ")
                             print("Inside, you find seeds and the materials needed to start a full off-grid farm. ")
                             print(" Ultimately, you live happily ever after. GAME OVER\n")
+                            future_end()
                         elif answertimemachine['time_machine'] == 'Live off grid' and (first_item['items'] != 'Food supplies' or second_item['items'] != 'Food supplies'):
                             print(f"After a couple miles of running, you find a nice spot to camp for the night. You check your backpack for things that you might need, but unfortunately all you find are the {first_item['items']} and {second_item['items']}.") 
                             print("You are unable to substain yourself, without the necessary food supplies to set up a food source, and before long you perish. GAME OVER\n") 
+                            future_end()
                         elif answertimemachine['time_machine'] == 'Attempt to make your way back to the time machine' and (first_item['items'] == 'Toolkit' or second_item['items'] == 'Toolkit'):
                             print("You start making your way back to where you left the time machine all the years before. ")
                             print("When you arrive, you find the machine slightly overgrown, and surrounded by empty tents and campfires, implying people are living out of it.\n") 
-                            print(" You have to work quickly to fix the machine, but luckily you grabbed the toolkit from the time machine, and you are able to make it out and return home. GAME OVER\n") 
+                            print(" You have to work quickly to fix the machine, but luckily you grabbed the toolkit from the time machine, and you are able to make it out and return home. GAME OVER\n")
+                            future_end() 
                         else: 
                             print("You start making your way back to where you left the time machine all the years before. ")
                             print("When you arrive, you find the machine slightly overgrown, and surrounded by empty tents and campfires, implying people are living out of it.\n")
-                            print(" Unfortunately, you lack the tools or resources to quickly fix the machine in time, and before long you here the inhabitants return - they don't listen to your attempt to explain that the machine is yours, fights break out, and, outnumbered, you perish. GAME OVER\n")     
+                            print(" Unfortunately, you lack the tools or resources to quickly fix the machine in time, and before long you here the inhabitants return - they don't listen to your attempt to explain that the machine is yours, fights break out, and, outnumbered, you perish. GAME OVER\n")
+                            future_end()     
 
         elif technology1answer['technology1'] == 'Return to headquarters as one of their own' and (first_item['items'] != 'Leadership Manifesto' or second_item['items'] != 'Leadership Manifesto'):
             print("\nYou arrive back at the technology headquarters. It's massive. Robots, cyborgs, and the humans that are allied with them, all coexisting in peace. It's clear you picked the winning side.")
@@ -337,10 +350,12 @@ def travel_to_future():
                 print("You rush over to your friend, pull out your medkit, and quickly get them patched up. ")
                 print("However, as you're helping them you get hit by a stray bullet from the incoming soliders.")
                 print("Your friend is able to escape, but because you used your medkit on them, you are killed. GAME OVER\n")
+                future_end()
             elif answersavefriend['friend'] == 'Attempt to save your friend' and (first_item['items'] != 'Medkit' or second_item['items'] != 'Medkit'):
                 print("You rush over to your friend, reach for your bag, but realize you forgot your medkit in the time machine. ")
                 print("Because you tried to save them, the enemy soldiers are closer, and you get hit by a stray bullet.")
                 print("You are killed. GAME OVER\n")
+                future_end()
             else: 
                 print("You turn away from their cries, and run away. ")
                 print("You know you can't go back ever again, as you will be labeled as a deserter and tried for treason.\n")
@@ -356,17 +371,21 @@ def travel_to_future():
                     print("You check your backpack for things that you might need, and luckily, you find the food supplies you grabbed from the time machine.")
                     print("Inside, you find seeds and the materials needed to start a full off-grid farm. ")
                     print("Ultimately, you live happily ever after. GAME OVER\n")
+                    future_end()
                 elif answertimemachine['time_machine'] == 'Live off grid' and (first_item['items'] != 'Food supplies' or second_item['items'] != 'Food supplies'):
                     print(f"After a couple miles of running, you find a nice spot to camp for the night. You check your backpack for things that you might need, but unfortunately all you find are the {first_item['items']} and {second_item['items']}.") 
-                    print("You are unable to substain yourself, without the necessary food supplies to set up a food source, and before long you perish. GAME OVER\n") 
+                    print("You are unable to substain yourself, without the necessary food supplies to set up a food source, and before long you perish. GAME OVER\n")
+                    future_end() 
                 elif answertimemachine['time_machine'] == 'Attempt to make your way back to the time machine' and (first_item['items'] == 'Toolkit' or second_item['items'] == 'Toolkit'):
                     print("You start making your way back to where you left the time machine all the years before. ")
                     print("When you arrive, you find the machine slightly overgrown, and surrounded by empty tents and campfires, implying people are living out of it.") 
-                    print("You have to work quickly to fix the machine, but luckily you grabbed the toolkit from the time machine, and you are able to make it out and return home. GAME OVER\n") 
+                    print("You have to work quickly to fix the machine, but luckily you grabbed the toolkit from the time machine, and you are able to make it out and return home. GAME OVER\n")
+                    future_end() 
                 else: 
                     print("You start making your way back to where you left the time machine all the years before. ")
                     print("When you arrive, you find the machine slightly overgrown, and surrounded by empty tents and campfires, implying people are living out of it.\n")
-                    print("Unfortunately, you lack the tools or resources to quickly fix the machine in time, and before long you here the inhabitants return - they don't listen to your attempt to explain that the machine is yours, fights break out, and, outnumbered, you perish. GAME OVER\n")      
+                    print("Unfortunately, you lack the tools or resources to quickly fix the machine in time, and before long you here the inhabitants return - they don't listen to your attempt to explain that the machine is yours, fights break out, and, outnumbered, you perish. GAME OVER\n")
+                    future_end()      
 
         else: 
             print("You have deserted the technology's cause. You know you can't go back ever again, as you will be labeled as a deserter and tried for treason. ")
@@ -383,16 +402,19 @@ def travel_to_future():
                 print("You check your backpack for things that you might need, and luckily, you find the food supplies you grabbed from the time machine.")
                 print("Inside, you find seeds and the materials needed to start a full off-grid farm. ")
                 print("Ultimately, you live happily ever after. GAME OVER\n")
+                future_end()
             elif answertimemachine['time_machine'] == 'Live off-grid by yourself' and (first_item['items'] != 'Food supplies' or second_item['items'] != 'Food supplies'):
                 print(f"After a couple miles of running, you find a nice spot to camp for the night. ")
                 print("You check your backpack for things that you might need, but unfortunately all you find are the {first_item['items']} and {second_item['items']}.") 
-                print("You are unable to substain yourself, without the necessary food supplies to set up a food source, and before long you perish. GAME OVER\n")  
+                print("You are unable to substain yourself, without the necessary food supplies to set up a food source, and before long you perish. GAME OVER\n")
+                future_end()  
             elif answertimemachine['time_machine'] == 'Live with the neutral people' and (first_item['items'] == 'Gas mask' or second_item['items'] == 'Gas mask'):
                 print("You stay with the neutral people, and live with them well for a couple years. ")
                 print("They teach you to farm and live off of the land, and you see a level of piece and contentment you aren't used to.")
                 print("\n However, the war continued to get worse and worse, until the technological forces had humans on their last legs. The final humans set nuclear bombs, sacrificing themselves to stop the technology.")
                 print("\n The bombs strike when you are out, and you find yourself with just minutes of time to react. ")
                 print("Luckily, you grabbed the gas mask from the time machine, and you survive. There isn't much of anything after the bombs, and you return home on the time machine. GAME OVER \n")
+                future_end()
             elif answertimemachine['time_machine'] == 'Live with the neutral people' and (first_item['items'] != 'Gas mask' or second_item['items'] != 'Gas mask'):
                 print("You stay with the neutral people, and live with them well for a couple years. ")
                 print("They teach you to farm and live off of the land, and you see a level of piece and contentment you aren't used to.")
@@ -400,14 +422,17 @@ def travel_to_future():
                 print("The final humans set nuclear bombs, sacrificing themselves to stop the technology.")
                 print("\n The bombs strike when you are out, and you find yourself with just minutes of time to react. ")
                 print("Unfortunately, you lack the tools to survive the bombs, and you are killed. GAME OVER \n")
+                future_end()
             elif answertimemachine['time_machine'] == 'Attempt to make your way back to the time machine' and (first_item['items'] == 'Toolkit' or second_item['items'] == 'Toolkit'):
                 print("You start making your way back to where you left the time machine all the years before. ")
                 print("When you arrive, you find the machine slightly overgrown, and surrounded by empty tents and campfires, implying people are living out of it.") 
                 print("You have to work quickly to fix the machine, but luckily you grabbed the toolkit from the time machine, and you are able to make it out and return home. GAME OVER\n") 
+                future_end()
             else: 
                 print("You start making your way back to where you left the time machine all the years before. ")
                 print("When you arrive, you find the machine slightly overgrown, and surrounded by empty tents and campfires, implying people are living out of it.\n")
-                print("Unfortunately, you lack the tools or resources to quickly fix the machine in time, and before long you here the inhabitants return - they don't listen to your attempt to explain that the machine is yours, fights break out, and, outnumbered, you perish. GAME OVER\n")    
+                print("Unfortunately, you lack the tools or resources to quickly fix the machine in time, and before long you here the inhabitants return - they don't listen to your attempt to explain that the machine is yours, fights break out, and, outnumbered, you perish. GAME OVER\n") 
+                future_end()   
 
     elif faction['faction'] == 'Humans' and (first_item['items'] == 'Gun' or second_item['items'] == 'Gun'):
         print(" You have selected to join the humans. You run over to the their baracks, and pretend like you belong. ")
@@ -450,9 +475,11 @@ def travel_to_future():
                 if answertimemachine['time_machine'] == 'Live off-grid by yourself' and (first_item['items'] == 'Food supplies' or second_item['items'] == 'Food supplies'):
                     print("After a couple miles of running, you find a nice spot to camp for the night. You check your backpack for things that you might need, and luckily, you find the food supplies you grabbed from the time machine.")
                     print("Inside, you find seeds and the materials needed to start a full off-grid farm. Ultimately, you live happily ever after. GAME OVER\n")
+                    future_end()
                 elif answertimemachine['time_machine'] == 'Live off-grid by yourself' and (first_item['items'] != 'Food supplies' or second_item['items'] != 'Food supplies'):
                     print(f"After a couple miles of running, you find a nice spot to camp for the night. You check your backpack for things that you might need, but unfortunately all you find are the {first_item['items']} and {second_item['items']}.") 
-                    print("You are unable to substain yourself, without the necessary food supplies to set up a food source, and before long you perish. GAME OVER\n")  
+                    print("You are unable to substain yourself, without the necessary food supplies to set up a food source, and before long you perish. GAME OVER\n")
+                    future_end()  
                 elif answertimemachine['time_machine'] == 'Live with the neutral people' and (first_item['items'] == 'Gas mask' or second_item['items'] == 'Gas mask'):
                     print("You stay with the neutral people, and live with them well for a couple years. ")
                     print("They teach you to farm and live off of the land, and you see a level of piece and contentment you aren't used to.")
@@ -460,17 +487,21 @@ def travel_to_future():
                     print("The final humans set nuclear bombs, sacrificing themselves to stop the technology.")
                     print("\n The bombs strike when you are out, and you find yourself with just minutes of time to react. Luckily, you grabbed the gas mask from the time machine, and you survive. ")
                     print("There isn't much of anything after the bombs, and you return home on the time machine. GAME OVER \n")
+                    future_end()
                 elif answertimemachine['time_machine'] == 'Live with the neutral people' and (first_item['items'] != 'Gas mask' or second_item['items'] != 'Gas mask'):
                     print("You stay with the neutral people, and live with them well for a couple years. They teach you to farm and live off of the land, and you see a level of piece and contentment you aren't used to.")
                     print("\n However, the war continued to get worse and worse, until the technological forces had humans on their last legs. The final humans set nuclear bombs, sacrificing themselves to stop the technology.")
                     print("\n The bombs strike when you are out, and you find yourself with just minutes of time to react. Unfortunately, you lack the tools to survive the bombs, and you are killed. GAME OVER \n")
+                    future_end()
                 elif answertimemachine['time_machine'] == 'Attempt to make your way back to the time machine' and (first_item['items'] == 'Toolkit' or second_item['items'] == 'Toolkit'):
                     print("You start making your way back to where you left the time machine all the years before. When you arrive, you find the machine slightly overgrown, and surrounded by empty tents and campfires, implying people are living out of it.") 
                     print("You have to work quickly to fix the machine, but luckily you grabbed the toolkit from the time machine, and you are able to make it out and return home. GAME OVER\n") 
+                    future_end()
                 else: 
                     print("You start making your way back to where you left the time machine all the years before. ")
                     print("When you arrive, you find the machine slightly overgrown, and surrounded by empty tents and campfires, implying people are living out of it.\n")
-                    print("Unfortunately, you lack the tools or resources to quickly fix the machine in time, and before long you here the inhabitants return - they don't listen to your attempt to explain that the machine is yours, fights break out, and, outnumbered, you perish. GAME OVER\n")     
+                    print("Unfortunately, you lack the tools or resources to quickly fix the machine in time, and before long you here the inhabitants return - they don't listen to your attempt to explain that the machine is yours, fights break out, and, outnumbered, you perish. GAME OVER\n") 
+                    future_end()    
 
             elif humanassignmentanswer['milassignment'] == 'Fight on the front lines as a solider':
                 print("You have elected to serve on the front lines as a solider. You begin training immediately, and prep for your first upcoming battle.")
@@ -489,6 +520,7 @@ def travel_to_future():
                     print("However, that decision would prove to be fatal, as the enemy destroys your entire backline, and you find yourself surrounded.")
                     print("Almost as if fate, you find yourself the last one from your squad alive. ")
                     print("There are enemies on all sides, closing in with each passing moment. Ultimately, you do not surive the assualt. GAME OVER \n")
+                    future_end()
                 
                 elif humanbattleanswer['battleassignment'] == "Go toward the situation and attempt to stop them yourself":
                     print("You leave your post, and go directly toward the flanking enemy. You are able to successfully defeat the threat, and save the integrity of your squad.")
@@ -508,6 +540,7 @@ def travel_to_future():
                         print("You give a blood-boiling speech, motivating your armies, and for a moment there's hope.")
                         print("That hope will be short-lived, as your inability to effectively plan a strategic attack left your losses immeasurable. ")
                         print("Ultimately, you fell alongside your own army. GAME OVER")
+                        future_end()
                     
                     elif wardirectionanswer['war'] == 'Move toward the coast and attempt to control the ports':
                         print("You gather the troops and attack the coastal cities. You succeed, and before long, you control the coasts of the US. ")
@@ -525,9 +558,11 @@ def travel_to_future():
                             print("You rally the troops and move forward yet again with one final strike at the enemy. ")
                             print("You have weeded them out of valuable resources over time, and they are now weaker than ever before.")
                             print("However, yet again you have underestimated your enemy. Even weaker, the human army still stands no match to technology, and your assualt fails. GAME OVER")
+                            future_end()
                         else: 
                             print("You take advantage of the weakened enemy, and you push for diplomacy. ")
                             print("The enemy reluctantly accepts and after years and years of destruction, peace is finally accomplished. GAME OVER")
+                            future_end()
                     else:
                         print("You gather your army and make plans to move toward the capital. ")
                         print("Although the fight is tough, by focusing all of your manpower on the specific area, you are able to succeed.")
@@ -544,6 +579,7 @@ def travel_to_future():
                             print("However, your subjects sense weakness in their previously battle-hardened leader")
                             print("Before long whispers turn to riots, and soon you find yourself with a rebellion. They are disappointed you didn't continue to push further around the world. ")
                             print("Ultimately, an assassination attempt succeeds, and you fell at the hands of those you swore to protect. GAME OVER")
+                            future_end()
                         
                         else:
                             print("You let your generals know you have no plans of stopping anytime soon, and you want a report done on external territories. ")
@@ -571,10 +607,12 @@ def travel_to_future():
                                 if expanding2sanswer['expand'] == "Europe's armies are tougher with a lot more allies, but as the biggest challenge they offer the highest rewards.":
                                     print("Confident after your previous excursion, you decide to take on the European territories next. ")
                                     print("However, due to your already heavy losses, and the tough terrain, you and your army didn't come close. GAME OVER")
+                                    future_end()
                                 
                                 elif expanding2sanswer['expand'] == "Asia has by far the most centralized government with the largest army, but there are already talks of rebellion that could be leveraged against them. ":
                                     print("Confident after your previous excursion, you decide to take on the Asian territories next. ")
                                     print("However, due to your already heavy losses, and the sheer size of the Asian armies, you and your army didn't come close. GAME OVER")
+                                    future_end()
 
                                 else: 
                                     print("Confident after your previous excursion, you decide to take on the South American territories next. ")
@@ -589,10 +627,12 @@ def travel_to_future():
                                     if expanding2sanswer['expand'] == "Europe's armies are tougher with a lot more allies, but as the biggest challenge they offer the highest rewards.":
                                         print("Confident after your previous excursion, you decide to take on the European territories next. ")
                                         print("However, due to your already heavy losses, and the tough terrain, you and your army didn't come close. GAME OVER")
+                                        future_end()
                                     
                                     else:
                                         print("Confident after your previous excursion, you decide to take on the Asian territories next. ")
                                         print("However, due to your already heavy losses, and the sheer size of the Asian armies, you and your army didn't come close. GAME OVER")
+                                        future_end()
 
                             elif globalterritoriesanswer['global'] == 'South America is the closest and technologically inferior, but they are run by the cartels.':
                                 print("You pick South America as your first target and, after years of planning and training, get ready for the global attack. ")
@@ -609,10 +649,12 @@ def travel_to_future():
                                 if expanding2sanswer['expand'] == "Europe's armies are tougher with a lot more allies, but as the biggest challenge they offer the highest rewards.":
                                     print("Confident after your previous excursion, you decide to take on the European territories next. ")
                                     print("However, due to your already heavy losses, and the tough terrain, you and your army didn't come close. GAME OVER")
+                                    future_end()
                                 
                                 elif expanding2sanswer['expand'] == "Asia has by far the most centralized government with the largest army, but there are already talks of rebellion that could be leveraged against them. ":
                                     print("Confident after your previous excursion, you decide to take on the Asian territories next. ")
                                     print("However, due to your already heavy losses, and the sheer size of the Asian armies, you and your army didn't come close. GAME OVER")
+                                    future_end()
 
                                 else: 
                                     print("Confident after your previous excursion, you decide to take on the African territories next. ")
@@ -627,15 +669,18 @@ def travel_to_future():
                                     if expanding2sanswer['expand'] == "Europe's armies are tougher with a lot more allies, but as the biggest challenge they offer the highest rewards.":
                                         print("Confident after your previous excursion, you decide to take on the European territories next. ")
                                         print("However, due to your already heavy losses, and the tough terrain, you and your army didn't come close. GAME OVER")
+                                        future_end()
                                     
                                     else:
                                         print("Confident after your previous excursion, you decide to take on the Asian territories next. ")
                                         print("However, due to your already heavy losses, and the sheer size of the Asian armies, you and your army didn't come close. GAME OVER")
+                                        future_end()
 
 
                             elif globalterritoriesanswer['global'] == "Europe's armies are tougher with a lot more allies, but as the biggest challenge they offer the highest rewards.":
                                 print("Confident in your army, you decide to take on the European territories next. ")
                                 print("However, due to their technological superiority, and the tough terrain, you and your army didn't come close. GAME OVER")
+                                future_end()
 
                             else:
                                 print("You decide to take on Asia. Understanding that their sheer size, and inability to keep everyone satisfied, is their biggest weakness, you use spies to strike from within.")
@@ -653,6 +698,7 @@ def travel_to_future():
                                 if expanding2sanswer['expand'] == "Europe's armies are tougher with a lot more allies, but as the biggest challenge they offer the highest rewards.":
                                     print("Confident after your previous excursion, you decide to take on the European territories next. ")
                                     print("However, due to your already heavy losses, and the tough terrain, you and your army didn't come close. GAME OVER")
+                                    future_end()
                                 
                                 elif expanding2sanswer['expand'] == "Africa is technologically inferior to your army, but the land is unfamilar and disease-ridden.":
                                     print("Confident after your previous excursion, you decide to take on the African territories next. ")
@@ -667,6 +713,7 @@ def travel_to_future():
                                     if expanding2sanswer['expand'] == "Europe's armies are tougher with a lot more allies, but as the biggest challenge they offer the highest rewards.":
                                         print("Confident after your previous excursion, you decide to take on the European territories next. ")
                                         print("However, due to your already heavy losses, and the tough terrain, you and your army didn't come close. GAME OVER")
+                                        future_end()
                                     
                                     else:
                                         print("Confident after your previous excursion, you decide to take on the South American territories next. ")
@@ -683,6 +730,7 @@ def travel_to_future():
                                             print("Finally, you look to conquer Europe, the only remaining territory. ")
                                             print("Although their armies are larger and technology superior, with sheer numbers you attack from all sides and are able to defeat them.")
                                             print("You are history's first ruler of the entire world - congratulations, you just made history. GAME OVER")
+                                            future_end()
 
                                 else: 
                                     print("Confident after your previous excursion, you decide to take on the South American territories next. ")
@@ -697,6 +745,7 @@ def travel_to_future():
                                     if expanding2sanswer['expand'] == "Europe's armies are tougher with a lot more allies, but as the biggest challenge they offer the highest rewards.":
                                         print("Confident after your previous excursion, you decide to take on the European territories next. ")
                                         print("However, due to your already heavy losses, and the tough terrain, you and your army didn't come close. GAME OVER")
+                                        future_end()
                                     
                                     else:
                                         print("Confident after your previous excursion, you decide to take on the African territories next. ")
@@ -712,6 +761,7 @@ def travel_to_future():
                                         if expanding4sanswer['expand'] == "Europe's armies are tougher with a lot more allies, but as the biggest challenge they offer the highest rewards.":
                                             print("Finally, you look to conquer Europe, the only remaining territory. Although their armies are larger and technology superior, with sheer numbers you attack from all sides and are able to defeat them.")
                                             print("You are history's first ruler of the entire world - congratulations, you just made history. GAME OVER")
+                                            future_end()
 
             else: 
                 print("You stay decide to stay and apply what you learned from the Leadership Manifesto to work your way up the officer ranks. ")
@@ -728,7 +778,8 @@ def travel_to_future():
                 if answertechleadership['tech_lead'] == 'Retire as a successful leader and attempt to go back to the time machine':
                     print("You start making your way back to where you left the time machine all the years before. ")
                     print("When you arrive, you find the machine slightly overgrown, and surrounded by empty tents and campfires, implying people are living out of it.") 
-                    print(" You have to work quickly to fix the machine, but luckily you are able to make it out and return home. GAME OVER\n") 
+                    print(" You have to work quickly to fix the machine, but luckily you are able to make it out and return home. GAME OVER\n")
+                    future_end() 
                 
                 else: 
                     print("You decide to stay on as the leader.")
@@ -741,15 +792,19 @@ def travel_to_future():
 
                     if usleadershipanswer['usleader'] == 'Dictatorship':
                         print("You take the government by your hands and lead as a dictator. You rule ruthlessly, destroying anyone and anything that stands in your way. ")
-                        print("Before long, your enemies outnumber your allies, and you get assassinated. GAME OVER")              
+                        print("Before long, your enemies outnumber your allies, and you get assassinated. GAME OVER")
+                        future_end()              
                     elif usleadershipanswer['usleader'] == 'Communist':
                         print("You lead the country as a communist leader. ")
                         print("You attempt to fix the mistakes of the previous communist leaders that failed, but your attempts ultimately fall short and the country falls into ruins. GAME OVER")
+                        future_end()
                     elif usleadershipanswer['usleader'] == 'Socialist':
                         print("You decide to lead the country as a socialist power. With the work of other global nations, and the newfound technological insights of the 3000s, you are able to cure world hunger and solve environment challenges. Yay! GAME OVER")
+                        future_end()
                     else:
                         print("You restore the democratic power that was ruling when you were in power. ")
-                        print("Prosperity returns to the country, and everybody live happily ever after.")
+                        print("Prosperity returns to the country, and everybody live happily ever after. GAME OVER")
+                        future_end()
 
         elif humans1answer['technology1'] == 'Shoot the prisoner' and (first_item['items'] != 'Leadership Manifesto' or second_item['items'] != 'Leadership Manifesto'):
             print("You execute the prisoner. The human restoralists are statisfied, and, as the battle has ended, offer to show you back to their base.")
@@ -781,9 +836,11 @@ def travel_to_future():
                     print("You check your backpack for things that you might need, and luckily, you find the food supplies you grabbed from the time machine.")
                     print("Inside, you find seeds and the materials needed to start a full off-grid farm. ")
                     print("Ultimately, you live happily ever after. GAME OVER\n")
+                    future_end()
                 elif answertimemachine['time_machine'] == 'Live off-grid by yourself' and (first_item['items'] != 'Food supplies' or second_item['items'] != 'Food supplies'):
                     print(f"After a couple miles of running, you find a nice spot to camp for the night. You check your backpack for things that you might need, but unfortunately all you find are the {first_item['items']} and {second_item['items']}.") 
                     print("You are unable to substain yourself, without the necessary food supplies to set up a food source, and before long you perish. GAME OVER\n")  
+                    future_end()
                 elif answertimemachine['time_machine'] == 'Live with the neutral people' and (first_item['items'] == 'Gas mask' or second_item['items'] == 'Gas mask'):
                     print("You stay with the neutral people, and live with them well for a couple years. ")
                     print("They teach you to farm and live off of the land, and you see a level of piece and contentment you aren't used to.")
@@ -792,6 +849,7 @@ def travel_to_future():
                     print("\n The bombs strike when you are out, and you find yourself with just minutes of time to react. ")
                     print("Luckily, you grabbed the gas mask from the time machine, and you survive. ")
                     print("There isn't much of anything after the bombs, and you return home on the time machine. GAME OVER \n")
+                    future_end()
                 elif answertimemachine['time_machine'] == 'Live with the neutral people' and (first_item['items'] != 'Gas mask' or second_item['items'] != 'Gas mask'):
                     print("You stay with the neutral people, and live with them well for a couple years. ")
                     print("They teach you to farm and live off of the land, and you see a level of piece and contentment you aren't used to.")
@@ -799,14 +857,17 @@ def travel_to_future():
                     print("The final humans set nuclear bombs, sacrificing themselves to stop the technology.")
                     print("\n The bombs strike when you are out, and you find yourself with just minutes of time to react. ")
                     print("Unfortunately, you lack the tools to survive the bombs, and you are killed. GAME OVER \n")
+                    future_end()
                 elif answertimemachine['time_machine'] == 'Attempt to make your way back to the time machine' and (first_item['items'] == 'Toolkit' or second_item['items'] == 'Toolkit'):
                     print("You start making your way back to where you left the time machine all the years before. ")
                     print("When you arrive, you find the machine slightly overgrown, and surrounded by empty tents and campfires, implying people are living out of it.") 
                     print("You have to work quickly to fix the machine, but luckily you grabbed the toolkit from the time machine, and you are able to make it out and return home. GAME OVER\n") 
+                    future_end()
                 else: 
                     print("You start making your way back to where you left the time machine all the years before. ")
                     print("When you arrive, you find the machine slightly overgrown, and surrounded by empty tents and campfires, implying people are living out of it.\n")
                     print("Unfortunately, you lack the tools or resources to quickly fix the machine in time, and before long you here the inhabitants return - they don't listen to your attempt to explain that the machine is yours, fights break out, and, outnumbered, you perish. GAME OVER\n") 
+                    future_end()
         
         elif humans1answer['technology1'] == 'Run away and leave the cause':
             print("While the soldiers aren't looking you run away and, although narrowly, escape. ")
@@ -825,15 +886,18 @@ def travel_to_future():
                 print("You check your backpack for things that you might need, and luckily, you find the food supplies you grabbed from the time machine.")
                 print("Inside, you find seeds and the materials needed to start a full off-grid farm. ")
                 print("Ultimately, you live happily ever after. GAME OVER\n")
+                future_end()
             elif answertimemachine['time_machine'] == 'Live off-grid by yourself' and (first_item['items'] != 'Food supplies' or second_item['items'] != 'Food supplies'):
                 print(f"After a couple miles of running, you find a nice spot to camp for the night. You check your backpack for things that you might need, but unfortunately all you find are the {first_item['items']} and {second_item['items']}.") 
                 print("You are unable to substain yourself, without the necessary food supplies to set up a food source, and before long you perish. GAME OVER\n")  
+                future_end()
             elif answertimemachine['time_machine'] == 'Live with the neutral people' and (first_item['items'] == 'Gas mask' or second_item['items'] == 'Gas mask'):
                 print("You stay with the neutral people, and live with them well for a couple years. ")
                 print("They teach you to farm and live off of the land, and you see a level of piece and contentment you aren't used to.")
                 print("\n However, the war continued to get worse and worse, until the technological forces had humans on their last legs. ")
                 print("The final humans set nuclear bombs, sacrificing themselves to stop the technology.")
                 print("\n The bombs strike when you are out, and you find yourself with just minutes of time to react. Luckily, you grabbed the gas mask from the time machine, and you survive. There isn't much of anything after the bombs, and you return home on the time machine. GAME OVER \n")
+                future_end()
             elif answertimemachine['time_machine'] == 'Live with the neutral people' and (first_item['items'] != 'Gas mask' or second_item['items'] != 'Gas mask'):
                 print("You stay with the neutral people, and live with them well for a couple years. ")
                 print("They teach you to farm and live off of the land, and you see a level of piece and contentment you aren't used to.")
@@ -841,18 +905,22 @@ def travel_to_future():
                 print("The final humans set nuclear bombs, sacrificing themselves to stop the technology.")
                 print("\n The bombs strike when you are out, and you find yourself with just minutes of time to react. ")
                 print("Unfortunately, you lack the tools to survive the bombs, and you are killed. GAME OVER \n")
+                future_end()
             elif answertimemachine['time_machine'] == 'Attempt to make your way back to the time machine' and (first_item['items'] == 'Toolkit' or second_item['items'] == 'Toolkit'):
                 print("You start making your way back to where you left the time machine all the years before. ")
                 print("When you arrive, you find the machine slightly overgrown, and surrounded by empty tents and campfires, implying people are living out of it.") 
                 print("You have to work quickly to fix the machine, but luckily you grabbed the toolkit from the time machine, and you are able to make it out and return home. GAME OVER\n") 
+                future_end()
             else: 
                 print("You start making your way back to where you left the time machine all the years before. ")
                 print("When you arrive, you find the machine slightly overgrown, and surrounded by empty tents and campfires, implying people are living out of it.\n")
-                print("Unfortunately, you lack the tools or resources to quickly fix the machine in time, and before long you here the inhabitants return - they don't listen to your attempt to explain that the machine is yours, fights break out, and, outnumbered, you perish. GAME OVER\n")    
+                print("Unfortunately, you lack the tools or resources to quickly fix the machine in time, and before long you here the inhabitants return - they don't listen to your attempt to explain that the machine is yours, fights break out, and, outnumbered, you perish. GAME OVER\n")   
+                future_end() 
         
         else:
             print("You valiantly let them know that you will not participate in an unjust execution - especially of a solider that is unarmed and surrending.")
             print("Unfortunately, valiance gets you nothing, and you are executed as an example for the others that are considering desertion. GAME OVER")
+            future_end()
 
     else:
         print("You have selected to join the humans. You run over to the their baracks, and pretend like you belong. ")
@@ -885,9 +953,11 @@ def travel_to_future():
                 print("You check your backpack for things that you might need, and luckily, you find the food supplies you grabbed from the time machine.")
                 print("Inside, you find seeds and the materials needed to start a full off-grid farm. ")
                 print("Ultimately, you live happily ever after. GAME OVER\n")
+                future_end()
             elif answertimemachine['time_machine'] == 'Live off-grid by yourself' and (first_item['items'] != 'Food supplies' or second_item['items'] != 'Food supplies'):
                 print(f"After a couple miles of running, you find a nice spot to camp for the night. You check your backpack for things that you might need, but unfortunately all you find are the {first_item['items']} and {second_item['items']}.") 
-                print("You are unable to substain yourself, without the necessary food supplies to set up a food source, and before long you perish. GAME OVER\n")  
+                print("You are unable to substain yourself, without the necessary food supplies to set up a food source, and before long you perish. GAME OVER\n") 
+                future_end() 
             elif answertimemachine['time_machine'] == 'Live with the neutral people' and (first_item['items'] == 'Gas mask' or second_item['items'] == 'Gas mask'):
                 print("You stay with the neutral people, and live with them well for a couple years. ")
                 print("hey teach you to farm and live off of the land, and you see a level of piece and contentment you aren't used to.")
@@ -896,6 +966,7 @@ def travel_to_future():
                 print("\n The bombs strike when you are out, and you find yourself with just minutes of time to react. ")
                 print("Luckily, you grabbed the gas mask from the time machine, and you survive. ")
                 print("There isn't much of anything after the bombs, and you return home on the time machine. GAME OVER \n")
+                future_end()
             elif answertimemachine['time_machine'] == 'Live with the neutral people' and (first_item['items'] != 'Gas mask' or second_item['items'] != 'Gas mask'):
                 print("You stay with the neutral people, and live with them well for a couple years. ")
                 print("They teach you to farm and live off of the land, and you see a level of piece and contentment you aren't used to.")
@@ -903,17 +974,21 @@ def travel_to_future():
                 print("The final humans set nuclear bombs, sacrificing themselves to stop the technology.")
                 print("\n The bombs strike when you are out, and you find yourself with just minutes of time to react. ")
                 print("Unfortunately, you lack the tools to survive the bombs, and you are killed. GAME OVER \n")
+                future_end()
             elif answertimemachine['time_machine'] == 'Attempt to make your way back to the time machine' and (first_item['items'] == 'Toolkit' or second_item['items'] == 'Toolkit'):
                 print("You start making your way back to where you left the time machine all the years before. ")
                 print("When you arrive, you find the machine slightly overgrown, and surrounded by empty tents and campfires, implying people are living out of it.") 
                 print("You have to work quickly to fix the machine, but luckily you grabbed the toolkit from the time machine, and you are able to make it out and return home. GAME OVER\n") 
+                future_end()
             else: 
                 print("You start making your way back to where you left the time machine all the years before. ")
                 print("When you arrive, you find the machine slightly overgrown, and surrounded by empty tents and campfires, implying people are living out of it.\n")
-                print("Unfortunately, you lack the tools or resources to quickly fix the machine in time, and before long you here the inhabitants return - they don't listen to your attempt to explain that the machine is yours, fights break out, and, outnumbered, you perish. GAME OVER\n")    
+                print("Unfortunately, you lack the tools or resources to quickly fix the machine in time, and before long you here the inhabitants return - they don't listen to your attempt to explain that the machine is yours, fights break out, and, outnumbered, you perish. GAME OVER\n") 
+                future_end()   
         
         else:
             print("You valiantly let them know that you will not participate in an unjust execution - especially of a solider that is unarmed and surrending.")
             print("Unfortunately, valiance gets you nothing, and you are executed as an example for the others that are considering desertion. GAME OVER")
+            future_end()
     
 travel_to_future()
