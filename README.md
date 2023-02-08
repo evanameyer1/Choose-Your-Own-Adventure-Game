@@ -21,7 +21,7 @@ In order to play our choose your own adventure game, you have to download our vi
 
 1. Download our game and it’s required packages at this link: insert link
 2. Right click on the folder that contains your download game and click Services>New Terminal at Folder.  
-4. Paste ‘timemachineenv/bin/activate’ into the command prompt next and click enter.
+4. Paste ‘venv/timemachineenv/bin/activate’ into the command prompt next and click enter.
 5. Paste 'pip install -r requirements.txt’ into your command prompt and click enter to install the required packages.
 6. Finally, paste ‘python “Main.py”’ to run the game and enjoy!
 
