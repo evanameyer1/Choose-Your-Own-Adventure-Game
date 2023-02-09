@@ -39,7 +39,7 @@ One night, when you’ve had enough, you grab a spare toolkit from your garage a
 2. Right click on the folder that contains your download game and click Services > New Terminal at Folder.
 3. Create a virtual enviornment: 
     * Open the Terminal app
-    * Paste pip install virtualenv
+    * Paste 'pip install virtualenv'
 4. Paste ‘timemachineenv/bin/activate’ into the command prompt next and click enter.
 5. Paste 'pip install -r requirements.txt’ into your command prompt and click enter to install the required packages.
 6. Finally, paste ‘python “Main.py”’ to run the game and enjoy!
