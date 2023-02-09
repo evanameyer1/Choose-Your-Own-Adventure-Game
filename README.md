@@ -16,7 +16,7 @@ One night, when you’ve had enough, you grab a spare toolkit from your garage a
 * inquirer
 * pprint
 ##### Installing Process
-* Install Python 3: https://www.python.org/downloads/
+* Install [Python 3](https://www.python.org/downloads/)
 * Install required packages:
 * tkinter: pip install python-tk
 * inquirer: pip install inquirer
@@ -35,12 +35,15 @@ One night, when you’ve had enough, you grab a spare toolkit from your garage a
 
 ##### For MacOS
 
-1. Download our game and it’s required packages at this link: insert link
-2. Right click on the folder that contains your download game and click Services>New Terminal at Folder.  
+1. Download our game and it’s required packages at this link: [link](https://drive.google.com/drive/folders/12HL2gLqy2v0IkFKQ0jYISr8pCtoThxU9?usp=sharing)
+2. Right click on the folder that contains your download game and click Services > New Terminal at Folder.
+3. Create a virtual enviornment: 
+    * _Open the Terminal app and enter the following commands:_
+    * Paste pip install virtualenv
 4. Paste ‘timemachineenv/bin/activate’ into the command prompt next and click enter.
 5. Paste 'pip install -r requirements.txt’ into your command prompt and click enter to install the required packages.
 6. Finally, paste ‘python “Main.py”’ to run the game and enjoy!
-
+7. The virtual envionrment can be deactivated using the 'deactivate' command
 
 ## Tools Used
 
