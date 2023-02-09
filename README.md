@@ -38,7 +38,7 @@ One night, when you’ve had enough, you grab a spare toolkit from your garage a
 1. Download our game and it’s required packages at this [link](https://drive.google.com/drive/folders/12HL2gLqy2v0IkFKQ0jYISr8pCtoThxU9?usp=sharing)
 2. Right click on the folder that contains your download game and click Services > New Terminal at Folder.
 3. Create a virtual enviornment: 
-    * _Open the Terminal app and enter the following commands:_
+    * Open the Terminal app
     * Paste pip install virtualenv
 4. Paste ‘timemachineenv/bin/activate’ into the command prompt next and click enter.
 5. Paste 'pip install -r requirements.txt’ into your command prompt and click enter to install the required packages.
