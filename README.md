@@ -29,15 +29,18 @@ One night, when you’ve had enough, you grab a spare toolkit from your garage a
 1. Download our game and it’s required packages at this [link](https://drive.google.com/drive/folders/12HL2gLqy2v0IkFKQ0jYISr8pCtoThxU9?usp=sharing)
 2. Type ‘cmd’ into your search bar to open the command prompt
 3. Right click on the folder that contains your download game and click “Copy as Path”. Then, in your command prompt, type ‘cd’ and paste your path. Click enter. 
-4. Paste ‘timemachineenv/Scripts/activate.bat’ into the command prompt next and click enter.
-5. Paste 'pip install -r requirements.txt’ into your command prompt and click enter to install the required packages.
-6. Finally, paste ‘python -m main’ to run the game and enjoy!
+4. Install pip by pasting this message 'py -m pip install --upgrade pip' and clicking enter.
+5. Create a virtual environment by pasting 'py -m pip install --user virtualenv' into the terminal and clicking enter.
+6. Then paste 'py -m venv timemachineenv' and click enter.
+7. Paste ‘timemachineenv/Scripts/activate.bat’ into the command prompt next and click enter.
+8. Paste 'pip install -r requirements.txt’ into your command prompt and click enter to install the required packages.
+9. Finally, paste ‘python -m main’ to run the game and enjoy!
 
 ##### For MacOS
 
 1. Download our game and it’s required packages at this [link](https://drive.google.com/drive/folders/12HL2gLqy2v0IkFKQ0jYISr8pCtoThxU9?usp=sharing)
 2. Right click on the folder that contains your download game and click Services > New Terminal at Folder.
-3. Create a virtual enviornment: 
+3. Create a virtual environment: 
     * Open the Terminal app
     * Paste 'pip install virtualenv'
 4. Paste ‘timemachineenv/bin/activate’ into the command prompt next and click enter.
